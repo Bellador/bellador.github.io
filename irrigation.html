@@ -72,28 +72,24 @@
 
         function getIrrigationTimes(sensorTimes, irrigationEvents) {
             let eventTimes = new Array(sensorTimes.length).fill(null);
-            let counter = 0
+            let sensorIndex = 0
             // add 0 (to draw the irrigation event) at the index of the same time in the sensor_times
-            for (const entry of irrigationEvents) {
+            for (const entry of sensorTimes) {
                 try {
-                  console.log(entry);
-                  const sensor_index = sensorTimes.search(entry);
-                  const isElementInArray = sensorTimes.includes(entry);
-                  console.log(isElementInArray);
-                  if (sensorIndex !== -1) {
+                  const isElementInArray = irrigationEvents.includes(entry);
+                  if (isElementInArray === true) {
                     eventTimes[sensorIndex] = 0;
-                    counter++;
                   }
                 } catch (error) {
                   continue;
                 }
+                sensorIndex++;
             }
             console.log(sensorTimes);
             console.log('--------------------------------------------------------------------------------------');
             console.log(irrigationEvents);
             console.log('--------------------------------------------------------------------------------------');
             console.log(eventTimes);
-            console.log(counter);
             return eventTimes;
         }
 
