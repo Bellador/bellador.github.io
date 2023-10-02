@@ -73,6 +73,7 @@
         function createLineChart(data) {
             var ctx = document.getElementById('lineChart').getContext('2d');
             const labelConcat = data.time.concat(data.irrigationEvents);
+            labelConcat.sort((a, b) => a - b);
             console.log(labelConcat);
             var myChart = new Chart(ctx, {
                 type: 'line',
