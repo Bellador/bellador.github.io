@@ -85,9 +85,7 @@
                     },
                     {
                         label: 'Irrigation Events',
-                        data: data.irrigationEvents.map(function(timestamp) {
-                            return 0;  // y-value for the bar chart
-                        }),
+                        data: data.irrigationEvents,
                         backgroundColor: 'blue',
                         borderColor: 'rgba(0, 0, 255, 0.4)',
                         borderWidth: 20,  // Adjust the line width as needed
@@ -117,7 +115,6 @@
                 }
             });
 
-            // Add two horizontal lines and color the area below 1.3 red, between 1.3 and 1.8 orange, and above 1.8 green
             // Add two horizontal lines and color the area below 1.3 red, between 1.3 and 1.8 orange, and above 1.8 green
             myChart.data.datasets.push({
                 borderColor: 'transparent',  // Hide the line
