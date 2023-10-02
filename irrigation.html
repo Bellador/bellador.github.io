@@ -74,7 +74,13 @@
             var ctx = document.getElementById('lineChart').getContext('2d');
             const labelConcat = data.time.concat(data.irrigationEvents);
             labelConcat.sort((a, b) => a - b);
+            irrigationTimes = data.irrigationEvents.map(function(timestamp) {
+                            console.log(data.irrigationEvents);
+                            return 0;  // y-value for the bar chart
+                        })
             console.log(labelConcat);
+            console.log('----------------');
+            console.log(irrigationTimes);
             var myChart = new Chart(ctx, {
                 type: 'line',
                 data:{
