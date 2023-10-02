@@ -77,7 +77,7 @@
             for (const entry of irrigationEvents) {
                 try {
                   console.log(entry);
-                  const sensor_index = sensorTimes.indexOf(parseInt(entry, 10));
+                  const sensor_index = sensorTimes.indexOf(entry.toString());
                   if (sensorIndex !== -1) {
                     eventTimes[sensorIndex] = 0;
                     counter++;
