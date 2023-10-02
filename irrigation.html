@@ -76,6 +76,7 @@
             // add 0 (to draw the irrigation event) at the index of the same time in the sensor_times
             for (const entry of irrigationEvents) {
                 try {
+                  console.log(entry);
                   const sensor_index = sensorTimes.indexOf(entry);
                   if (sensorIndex !== -1) {
                     eventTimes[sensorIndex] = 0;
