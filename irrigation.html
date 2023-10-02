@@ -74,18 +74,12 @@
             var ctx = document.getElementById('lineChart').getContext('2d');
             var myChart = new Chart(ctx, {
                 type: 'line',
-                data: {
-                    labels: data.time,
-                    datasets: [{
-                        label: 'Soil Moisture',
-                        data: data.moisture,
-                        borderColor: 'brown',
-                        borderWidth: 2,
-                        fill: false
-                    },
+                data:
                     {
                         label: 'Irrigation Events',
-                        data: data.irrigationEvents,
+                        data: data.irrigationEvents.map(function(timestamp) {
+                            return 0;  // y-value for the bar chart
+                        }),
                         backgroundColor: 'blue',
                         borderColor: 'rgba(0, 0, 255, 0.4)',
                         borderWidth: 20,  // Adjust the line width as needed
